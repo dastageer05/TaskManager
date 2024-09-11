@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <% if (locals.user) { %>
+        <div class="container mt-3" style="max-width: 500px;">
+          <form action="/task/EditTask/<%= task._id %>" method="post" class="p-4 rounded shadow-sm">
+              <h3  class="mb-4 text-center" style="font-family: 'Kaushan Script', cursive; color: #ff8800;">Edit Task</h3>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="input form-control"
+                  id="title"
+                  value="<%= task.title %>"
+                  name="title"
+                />
+              </div>
+      
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  class="textarea form-control"
+                  id="description"
+                  rows="3"
+                  name="description"
+                ><%= task.description %></textarea>
+              </div>
+              <div class="mb-3"></div>
+              <button class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+            <% } else { %>
+             
+            <% } %>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node Modules
+node_modules/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Environment variables
+.env
+
+# Debugger configurations
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage directory for test coverage tools
+coverage/
+
+# Build directory
+/dist
+/out
+
+# Yarn files
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Optional lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Parcel cache
+.cache/
+
+# Storybook build
+.out/
+
+# Next.js build files
+.next/

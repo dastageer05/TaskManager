@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <style>
+      .custom-container {
+        max-width: 100%; /* Remove Bootstrap's width limitation */
+        margin: 0 auto; /* Ensure it's centered */
+        padding-left: 15px; /* Add some padding for spacing */
+        padding-right: 15px;
+      }
+
+      @media (min-width: 768px) {
+        .custom-container {
+          max-width: 95%; /* Give some breathing room on larger screens */
+        }
+      }
+
+      /* Adjust row and card behavior */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: space-between; /* Ensure spacing between items */
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+
+      .card {
+        flex: 1 1 calc(33.333% - 15px); /* Each card takes up 1/3rd of row with 15px gap */
+        max-width: 100%; /* Prevent cards from overflowing */
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %> <% if (locals.user) { %>
+
+    <div class="custom-container mt-1">
+      <h4
+        class="task-heading py-2 px-3 mb-3 d-inline-flex align-items-center"
+        style="font-family: 'Kaushan Script'"
+      >
+        <span class="material-symbols-outlined me-2">assignment</span>
+        Daily Tasks
+      </h4>
+
+      <div class="row">
+        <% tasks.forEach(task => { %> <% if (task.typeoftask == "dailytask") { %>
+        <div class="card shadow-sm rounded-md border border-gray-200">
+          <div class="card-body p-1">
+            <h5 class="card-title text-xxs font-medium text-gray-700" style="color: rgb(255, 145, 0);">
+              <%= task.title %>
+            </h5>
+            <p class="card-text text-xxs text-gray-500">
+              <%= task.description %>
+            </p>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Type of Task: <%= task.typeoftask %>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Due Date: <%= task.duedate ? task.duedate.toLocaleDateString() :
+              'No due date' %>
+            </p>
+            </div>
+          </div>
+        </div>
+        <% } %> <% }) %>
+      </div>
+
+      <h4
+        class="task-heading py-2 px-3 mb-3 d-inline-flex align-items-center"
+        style="font-family: 'Kaushan Script'"
+      >
+        <span class="material-symbols-outlined me-2">assignment</span>
+        Weekly Tasks
+      </h4>
+
+      <div class="row">
+        <% tasks.forEach(task => { %> <% if (task.typeoftask == "weeklytask") { %>
+        <div class="card shadow-sm rounded-md border border-gray-200">
+          <div class="card-body p-1">
+            <h5 class="card-title text-xxs font-medium text-gray-700" style="color: rgb(255, 145, 0);">
+              <%= task.title %>
+            </h5>
+            <p class="card-text text-xxs text-gray-500">
+              <%= task.description %>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Type of Task: <%= task.typeoftask %>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Due Date: <%= task.duedate ? task.duedate.toLocaleDateString() :
+              'No due date' %>
+            </p>
+        </div>
+          </div>
+        </div>
+
+        <% } %> <% }) %>
+      </div>
+
+      <h4
+        class="task-heading py-2 px-3 mb-3 d-inline-flex align-items-center"
+        style="font-family: 'Kaushan Script'"
+      >
+        <span class="material-symbols-outlined me-2">assignment</span>
+        Monthly Tasks
+      </h4>
+
+      <div class="row">
+        <% tasks.forEach(task => { %> <% if (task.typeoftask == "monthlytask") { %>
+        <div class="card shadow-sm rounded-md border border-gray-200">
+          <div class="card-body p-1">
+            <h5 class="card-title text-xxs font-medium text-gray-700" style="color: rgb(255, 145, 0);">
+              <%= task.title %>
+            </h5>
+            <p class="card-text text-xxs text-gray-500">
+              <%= task.description %>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Type of Task: <%= task.typeoftask %>
+            </p>
+            <p class="card-text text-xxs text-gray-500">
+              Due Date: <%= task.duedate ? task.duedate.toLocaleDateString() :
+              'No due date' %>
+            </p>
+            </div>
+          </div>
+        </div>
+
+        <% } %> <% }) %>
+      </div>
+    </div>
+
+    <% } %> <%- include('./partials/script') %>
+  </body>
+</html>

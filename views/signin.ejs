@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="Color container mt-2 d-flex justify-content-center">
+      <form action="/user/signin" method="post" class= "Color p-4 rounded shadow-sm">
+        <h3 class="mb-4 text-center" style="font-family: 'Kaushan Script', cursive; color: #ff8800;">Sign In</h3>
+    
+        <div class="mb-3 position-relative">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <div class="input-group">
+            <span class="input-group-text" id="email-icon">
+              <i class="bi bi-envelope"></i>
+            </span>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div id="emailHelp" class="form-text text-muted">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+    
+        <div class="mb-3 position-relative">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <div class="input-group">
+            <span class="input-group-text" id="password-icon">
+              <i class="bi bi-lock"></i>
+            </span>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+        </div>
+    
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+        </div>
+    
+        <div class="text-center mt-3">
+          <p class="form-text">Don't have an account? <a href="/user/signup" class="text-primary">Sign up here</a></p>
+        </div>
+      </form>
+    </div>
+    
+
+    <%- include('./partials/script')%>
+  </body>
+</html>

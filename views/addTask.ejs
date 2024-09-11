@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <% if (locals.user) { %>
+      <div class="container mt-4" style="max-width: 500px;">
+        <form action="/task/Addtask/<%= user._id %>" method="post" class="p-4 rounded shadow-sm">
+          <h3 class="mb-4 text-center" style="font-family: 'Kaushan Script', cursive; color: #ff8800;">Add Task</h3>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              class="input form-control"
+              id="title"
+              placeholder="New Project"
+              name="title"
+            />
+          </div>
+      
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="textarea form-control"
+              id="description"
+              rows="3"
+              placeholder="Make React Project"
+              name="description"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="typeoftask" class="form-label">What kind of task is this</label>
+            <select class="form-select" id="typeoftask" name="typeoftask">
+              <option value="normaltask">Normal Task</option>
+              <option value="dailytask">Daily Task</option>
+              <option value="weeklytask">Weekly Task</option>
+              <option value="monthlytask">Monthly Task</option>
+            </select>
+          </div>
+          
+          <div class="mb-3">
+            <label for="duedate" class="form-label">Due Date</label>
+            <input type="date" class="form-control" id="duedate" name="duedate" min="<%= new Date().toISOString().split('T')[0] %>">
+          </div>
+          
+      
+          <button class="btn btn-primary w-100">Add Task</button>
+        </form>
+      </div>
+      
+    <% } else { %>
+     
+      <% } %>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Add Task</title>
+    <style>
+      /* Custom CSS for profile image */
+.profile-img {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    margin-bottom: 1rem; /* Space below the profile image */
+}
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <% if (user) { %>
+      <div class="container mt-3" style="max-width: 400px;">
+        <form action="/user/EditUser/<%= user._id %>" method="post" enctype="multipart/form-data" class="p-4 rounded shadow-sm">
+          <h3 class="mb-4 text-center" style="font-family: 'Kaushan Script', cursive; color: #ff7b00;">Edit Profile</h3>
+          <div class="mb-3">
+            <label for="profileImage" class="form-label">Profile Image</label>
+            <input type="file" class="input form-control" id="profileImage" name="profileImage"/>
+          </div>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="input form-control"
+              id="firstName"
+              name="firstName"
+              value="<%= user.firstName %>"
+              aria-describedby="fullName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="input form-control"
+              id="lastName"
+              name="lastName"
+              value="<%= user.lastName %>"
+              aria-describedby="fullName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              name="email"
+              class="input form-control"
+              id="exampleInputEmail1"
+              value="<%= user.email %>"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+    
+       
+    <% } else { %>
+      <div class="container mt-3">
+        <p>You need to be logged in to add a task. Please <a href="/user/signin">sign in</a>.</p>
+      </div>
+    <% } %>
+
+    <%- include('./partials/script') %>
+  </body>
+</html>

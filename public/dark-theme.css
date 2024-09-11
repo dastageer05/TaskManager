@@ -1,0 +1,134 @@
+/* dark-theme.css */
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --btn-bg: #333333;
+  --button-bg: #0056b3;
+  --button-text: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.navbar {
+  background-color: var(--background-color);
+  --bs-navbar-color: white;
+  --bs-navbar-active-color:white;
+  --bs-navbar-brand-color:white;
+  --bs-navbar-hover-color:rgb(240, 240, 240);
+}
+
+.btn-primary {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.card {
+  background-color: #1e1e1e;
+  color: var(--text-color);
+  border: 1px solid #444444;
+}
+
+.hero-section {
+  background-color: #222222;
+  color: var(--text-color);
+  border: 1px solid #444444;
+  /* Optional */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  color: var(--text-color);
+}
+
+.btn-dark-theme {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+}
+
+.features {
+  background-color: #161616;
+}
+
+.navbar-brand:hover {
+  color: white;
+}  
+
+.input, .textarea{
+  background-color: #474646;
+  color : rgb(212, 212, 212);
+}
+
+.task-heading {
+  background-color: #141414; /* Light grey background */
+  color: #f0f0f0; /* Darker text color for readability */
+  border-left: 5px solid #f39c12; /* Orange border for emphasis */
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: 600; /* Make the text bold */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.task-heading .material-symbols-outlined {
+  font-size: 1.5rem; /* Icon size */
+  color: #f39c12; /* Icon color to match the border */
+}
+
+.me-2 {
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.user-info {
+  font-size: 1.1rem;
+  color: #dddddd;
+}
+.user-info strong {
+  color: #dbdbdb;
+}
+.btn-custom {
+  background-color: #f39c12;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+.btn-custom:hover {
+  background-color: #d35400; /* Darker hover effect */
+  color: rgb(0, 0, 0);
+}
+.profile-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #202020; /* Light background for the card */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+}
+
+.Color {
+  background-color: #000000; /* Darker hover effect */
+  color: rgb(255, 255, 255);
+}
+
+.shadow-sm {
+  box-shadow: inset 0 0.125rem 2rem rgb(255, 255, 255) !important;
+}
+
+.form-text{
+  color: white;
+}
+
+.dropdown-item{
+  background-color: #000000;
+  color: white;
+}
+.dropdown-menu{
+  --bs-dropdown-bg:var(--background-color);
+  --bs-dropdown-link-hover-bg:var(--background-color);
+  --bs-dropdown-link-hover-color: white;
+  --bs-dropdown-border-color:white
+}
